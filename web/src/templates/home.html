@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Page Info -->
+    <title>Girish Krishnan ECE 140B Individual Assignments</title>
+    <meta name="author" content="Girish Krishnan">
+    <meta name="description" content="Girish's ECE 140B Individual Assignments">
+
+    <link rel="stylesheet" type="text/css" href="css/agile.css">
+
+  </head>
+
+  <body>
+
+    <div class='hero'>
+      <h1> Girish Krishnan </h1>
+      <p> ECE 140B Spring 2022 - Individual Assignments </p>
+    </div>
+
+    <section class='padding-responsive'>
+
+      <div class='separator'>My Team</div>
+      
+      <p>This is our team. Feel free to drop us an email!</p>
+
+      <table class='margin-top-xl'>
+        <thead>
+          <tr>
+            <th class='small'> First Name </th>
+            <th class='medium'> Last Name </th>
+            <th class='large'> Email </th>
+            <th class='large'> Specialization </th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for user in users %}
+          <tr>
+            <td> {{user[0]}} </td>
+            <td> {{user[1]}} </td>
+            <td> <a href= mailto:{{user[2]}}>{{user[2]}}</a> </td>
+            <td> {{user[3]}} </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      
+      <section class='responsive_grid'>
+        <div class='card bordered margin-none'> <img src="girish.png"></img>
+          Girish Krishnan
+        </div>
+        <div class='card bordered margin-none'> <img src="anish.png"></img>
+          Anish Sharma
+        </div>
+        <div class='card bordered margin-none'> <img src="hamza.png"></img>
+          Hamza Khan 
+        </div>
+        <div class='card bordered margin-none'> <img src="ian.png"></img>
+          Ian Tanuwidjaja
+        </div>
+      </section>
+
+      <div class='separator'>About Our Project</div>
+      <h2 class='bordered'> What is CarProtect? </h2>
+
+      <p> Imagine you've parked your car outside to grab some groceries from the local grocery store. After you come back, you notice that the window of your car trunk has been smashed and all your valuables in the trunk are gone. What do you do? Call the police? Most thiefs get away easily without being noticed, especially in large public parking areas. CarProtect will help you deter such thiefs. Our sensors precisely detect when a person attempts to break in, and loud alarms start blaring when a thief attempts to play their game. The premium version of CarProtect provides live video footage, allowing any suspect to be easily identified! </p>
+      
+      <h2 class='bordered'> How does it work? </h2>
+
+      <p>CarProtect uses a Passive Infrared Receiver (PIR Sensor) to detect the presence of a nearby human being, as well as accelerometers and gyroscopes to detect any suspicious movements around and within the car. Our unmatched glass-break detectors can precisely capture a break-in and notify the police immediately. CarDetect is interfaced with your mobile phone so that you receive live updates through our mobile application. For our premium version, you can also record live video footage of the area near your car trunk and receive a clear picture of any thief.</p>
+
+      <h2 class='bordered'> Customer Discovery </h2>
+
+      <p>The founders of CarProtect know several people who have experienced theft of valuable items from their cars. Although it is possible to retrieve lost items by using location markers such as AirTags, such tracking is inefficient especially when the thief is hundreds of miles away. GPS tracking is also ineffective as it doesn't give a very precise location of a stolen valuable. Why suffer the stress of finding a stolen object, when you can use CarProtect to prevent theft in the first place? The majority of our interviewed prospective customers have told us that they have NEVER gotten any of their stolen items back. Why? This is because the thief was unknown and unrecognizable. Furthermore, the theft came as an unexpected surprise. Our interviewed customers wholeheartedly agreed that CarProtect will identify risks of theft and even deter potential thiefs at a MUCH FASTER RATE than any conventional police investigation.</p>
+
+      <h2 class='bordered'> Competition </h2>
+
+      <p> Our primary competitors are LoJack and Apple AirTags. Even though LoJack uses GPS tracking to find the location of a stolen car, it's important to note that LoJack costs $700-$1000!! On the other hand, CarProtect only costs about $100 and provides real-time detection of possible break-ins, video footage, AND location tracking. And CarProtect is much cheaper! CarProtect is also more effective than AirTags because we use an alarm system to actually prevent theifs. This eliminates the need to find the location of stolen objects, defeating the purpose of AirTags.</p>
+
+      <h2 class='bordered'> Financials </h2>
+
+      <p>We have a Business-to-Customer model that obtains its revenue from direct sales of the IoT device to customers. Our estimated total cost of making one unit (i.e. one CarProtect device) is about $70, considering equipment, manufacturing, and installation. Since we are selling the product for $100, we have a profit margin of $30 per unit. We also earn revenue through sales of the premium model, wherein a camera is used to capture live footage.</p>
+
+      <h2 class='bordered'> Ethics </h2>
+
+      <p>Regarding the use of live recorded media: the video files remain within the IoT device and are not transmitted to the application or across the web. Files not used for evidence purposes (i.e. when a burglary occurs) are deleted automatically within the device. Concerning the possibility of false positives: a false positive is unlikely because we have multiple sensors used to detect a break-in, and if the system indicates a potential risk, then a live video recording is immediately started.</p>
+
+      <hr>
+    
+      <div class='separator'>Contact Us</div>
+      <form action="https://formsubmit.co/ec80ac62a161415b3fd2f92763640361" method="POST">
+
+        <section class='responsive_grid'>
+
+          <div class='field'>
+            <label> Enter your name: &nbsp;</label>
+            <input type='text' name='name' value='' class='margin-top-lg' required>
+          </div>
+
+          <div class='field'>
+            <label> Enter your email: &nbsp;</label>
+            <input type='text' name='email' value='' class='margin-top-lg' required>
+          </div>
+
+        </section>
+
+        <section class='responsive_grid'>
+          <div class="field">
+            <label> Reason for Contact: </label>
+            <label class="margin-top-lg control control--checkbox">Website Bugs/Suggestions
+              <input type="checkbox" checked="checked" />
+              <div class="control__indicator"></div>
+            </label>
+            <label class="control control--checkbox">Hardware/Other Technical Issues
+              <input type="checkbox" />
+              <div class="control__indicator"></div>
+            </label>
+            <label class="control control--checkbox">Delivery
+              <input type="checkbox" />
+              <div class="control__indicator"></div>
+            </label>
+            <label class="control control--checkbox">Other
+              <input type="checkbox" />
+              <div class="control__indicator"></div>
+            </label>
+          </div>
+
+          <div class="field">
+            <label>Please enter your message here:</label>
+            <div></div>
+     <textarea name="ContactComment" rows="6″ cols="10″>
+</textarea>
+          </div>
+        </section>
+        <input type ='hidden' name='_next' value='http://143.244.191.21'>
+        <input type='hidden' name="_subject" value="CarProtect Contact Form">
+        <button type="submit" value="Submit">Submit Form</button>
+      </form>
+
+    </section>
+    <script type="text/javascript" src="./js/rest.js"></script>
+
+  </body>
+</html> 
