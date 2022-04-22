@@ -22,6 +22,14 @@ def get_home(req):
 
   return render_to_response('templates/home.html', {'users': records}, request=req)
 
+def get_unlock(req):
+  name = req.matchdict['name']
+  code = req.matchdict['code']
+
+  return {'name': name,
+            'code':code
+    }
+
 ''' Route Configurations '''
 if __name__ == '__main__':
   config = Configurator()
@@ -31,6 +39,9 @@ if __name__ == '__main__':
 
   config.add_route('get_home', '/')
   config.add_view(get_home, route_name='get_home')
+
+  config.add_route('unlock', '/unlock/{name}/{code}/')
+  config.add_view(get_unlock, route_name='unlock')
 
   config.add_static_view(name='/', path='./public', cache_max_age=3600)
 
