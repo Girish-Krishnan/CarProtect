@@ -1,3 +1,4 @@
+import json
 from wsgiref.simple_server import make_server
 from pyramid.config import Configurator
 from pyramid.renderers import render_to_response
@@ -41,7 +42,7 @@ if __name__ == '__main__':
   config.add_view(get_home, route_name='get_home')
 
   config.add_route('unlock', '/unlock/{name}/{code}/')
-  config.add_view(get_unlock, route_name='unlock')
+  config.add_view(get_unlock, route_name='unlock',renderer='json')
 
   config.add_static_view(name='/', path='./public', cache_max_age=3600)
 
