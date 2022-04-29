@@ -69,7 +69,7 @@ def stream_data(req):
   password = req.matchdict['password']
   db = mysql.connect(host=db_host, database=db_name, user=db_user, passwd=db_pass)
   cursor = db.cursor()
-  cursor.execute("select pir,vib,ax,ay,az,latitude,longitude from Sensor_Data where username = %s and password = %s order by timestamp DESC;", (username, password))
+  cursor.execute("select pir,vib,ax,ay,az,latitude,longitude from Sensor_Data where username = %s and password = %s order by time_added DESC;", (username, password))
   records = cursor.fetchone()
   db.close()
   return {
