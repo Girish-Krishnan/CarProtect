@@ -273,7 +273,7 @@ table tr:nth-child(odd) {
 label {
   color: var(--dark-color);
 }
-input[type="text"], textarea {
+input[type="text"], input[type="password"] textarea {
   border: none;
   background-color: var(--light-color);
   padding: var(--padding-med);
