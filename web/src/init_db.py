@@ -46,9 +46,9 @@ cursor.execute("""
       ax                integer NOT NULL,
       ay                integer NOT NULL,
       az                integer NOT NULL,
-      lat               float NOT NULL,
-      long              float NOT NULL,
-      time              TIMESTAMP
+      latitude          float NOT NULL,
+      longitude         float NOT NULL,
+      time_added              TIMESTAMP
     );
   """)
 #except:
