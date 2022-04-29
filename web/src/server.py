@@ -59,7 +59,7 @@ def send_data(req):
   # Connect to the database and retrieve the users
   db = mysql.connect(host=db_host, database=db_name, user=db_user, passwd=db_pass)
   cursor = db.cursor()
-  cursor.execute("insert into Sensor_Data (username, password, pir, vib, ax, ay, az, lat, longitude, time_added) values (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s);", (username, password, pir, vib, ax, ay, az, lat, long, str(datetime.now())))
+  cursor.execute("insert into Sensor_Data (username, password, pir, vib, ax, ay, az, latitude, longitude, time_added) values (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s);", (username, password, pir, vib, ax, ay, az, lat, long, str(datetime.now())))
   db.commit()
   db.close()
   return {}
@@ -69,7 +69,7 @@ def stream_data(req):
   password = req.matchdict['password']
   db = mysql.connect(host=db_host, database=db_name, user=db_user, passwd=db_pass)
   cursor = db.cursor()
-  cursor.execute("select pir,vib,ax,ay,az,lat,longitude from Sensor_Data where username = %s and password = %s order by timestamp DESC;", (username, password))
+  cursor.execute("select pir,vib,ax,ay,az,latitude,longitude from Sensor_Data where username = %s and password = %s order by timestamp DESC;", (username, password))
   records = cursor.fetchone()
   db.close()
   return {
