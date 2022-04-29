@@ -3,6 +3,7 @@ var pir = document.getElementById("pir")
 var acc = document.getElementById("acc")
 var latitude = document.getElementById("lat")
 var longitude = document.getElementById("long")
+var stream  = setInterval(function() {}, 1000);
 
 function log_in() {
     var username = document.getElementById("username").value;
@@ -21,7 +22,7 @@ function log_in() {
         }
 
 function stream_data(username,password) {
-    var stream = setInterval(function() {
+    stream = setInterval(function() {
     
         fetch('/stream/' + username + '/' + password + '/')
             .then(response => response.json())
