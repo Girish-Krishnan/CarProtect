@@ -35,8 +35,8 @@ try:
 except:
   print("Users table already exists. Not recreating it.")
 
-try:
-  cursor.execute("""
+#try:
+cursor.execute("""
     CREATE TABLE Sensor_Data (
       id                integer  AUTO_INCREMENT PRIMARY KEY,
       username          VARCHAR(30) NOT NULL,
@@ -51,8 +51,8 @@ try:
       time              TIMESTAMP
     );
   """)
-except:
-  print("Sensor_Data table already exists. Not recreating it.")
+#except:
+#  print("Sensor_Data table already exists. Not recreating it.")
 
 try:
   cursor.execute("""
