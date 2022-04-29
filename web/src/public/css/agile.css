@@ -38,6 +38,15 @@ body {
   font-family: var(--font);
 }
 
+menuitem {
+  color:white;
+  background-color: #048BA8;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+  font-size: 20px;
+}
+
 p {
   line-height: 2;
 }

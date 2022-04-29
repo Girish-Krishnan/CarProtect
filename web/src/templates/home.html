@@ -24,6 +24,33 @@
 
     <section class='padding-responsive'>
 
+      <div class='separator'>Log in to your CarProtector</div>
+
+      <h3>Enter your username and password:</h3>
+   
+      <label>Username: </label>
+      <input type="text" id="username" name="username"><br><br>
+      <label>Password: </label>
+      <input type="password" id="password" name="password"><br><br>
+
+      <!-- <menu>
+        <menuitem onclick="log_in()">Log in!</menuitem>
+      </menu>  -->
+
+      <button type="submit" value="Submit" onclick="log_in()">Log In</button>
+
+      <div class='separator sensor_data'>Your CarProtector</div>
+
+      <h2 class="sensor_data" id="pir">Motion of a Person Nearby: </h2>
+
+      <h2 class="sensor_data" id = "vib">Vibrations: </h2>
+
+      <h2 class="sensor_data" id = "acc">Accelerations: </h2>
+
+      <h2 class="sensor_data" id = "lat">Latitude: </h2>
+
+      <h2 class="sensor_data" id = "long">Longitude: </h2>
+
       <div class='separator'>The Team</div>
       
       <p>This is our team. Feel free to drop us an email!</p>
@@ -63,18 +90,6 @@
           Ian Tanuwidjaja
         </div>
       </section>
-
-      <div class='separator'>Log in to your CarProtector</div>
-
-      <h3>Enter your username and password:</h3>
-   
-      <label>Username: </label>
-      <input type="text" id="username" name="username"><br><br>
-      <label>Password: </label>
-      <input type="text" id="password" name="password"><br><br>
-
-   <input type="button" id = "btn" value="login" onclick="log_in();">
-   
 
       <div class='separator'>About Our Project</div>
       <h2 class='bordered'> What is CarProtect? </h2>
