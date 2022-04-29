@@ -24,7 +24,7 @@ function log_in() {
 function stream_data(username,password) {
     stream = setInterval(function() {
     
-        fetch('/stream/' + username + '/' + password + '/')
+        fetch('/stream_data/' + username + '/' + password + '/')
             .then(response => response.json())
             .then(function(response) {
                 if(response['pir'] == "1") {
