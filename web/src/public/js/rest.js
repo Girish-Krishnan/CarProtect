@@ -34,14 +34,9 @@ function stream_data(username,password) {
                 else {
                     pir.innerHTML = "Motion of a Person Nearby: No";
                 }
-                
-                if(response['vib'] == "1") {
-                    vibration.innerHTML = "Vibrations: Yes";
-                }
-                else {
-                    vibration.innerHTML = "Vibrations: No";
-                }
 
+                vibration.innerHTML = "Vibrations: " + response['vib'];
+            
                 acc.innerHTML = "Accelerations: " + response['ax'] + ", " + response['ay'] + ", " + response['az'];
                 if(response['lat'] != "0.000000") {
                 latitude.innerHTML = "Latitude: " + response['lat'];
