@@ -122,10 +122,6 @@ h2, h3, h4, h5, h6, .card {
   background: var(--light-color);
   width: 100%;
   
-  position: absolute;
-  top: 50%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
 }
 table {
   table-layout: fixed;
