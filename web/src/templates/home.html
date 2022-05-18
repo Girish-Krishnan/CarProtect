@@ -44,7 +44,7 @@
       <section class='responsive_grid'>
         <div class='card bordered margin-none'>
           <h2 class='bordered'>People Nearby</h2>
-          <img src="person_0.png" alt="person_0" id="people_1">
+          <img src="person_0.png" width="50%" alt="person_0" id="people_1">
           <img src="good.png" alt="good" id = "people_2">
         </div>
         <div class='card bordered margin-none'>
@@ -55,7 +55,8 @@
         <div class='card bordered margin-none'>
           <h2 class='bordered'> Location </h2>
           <div id="gpsdisplay">
-        
+            <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+            <div id="map" style="width: 400px; height: 300px"></div><script type="text/javascript"> var myOptions = {zoom: 8,center: new google.maps.LatLng("0.0"  ,  "0.0"),mapTypeId: google.maps.MapTypeId.ROADMAP};var map = new google.maps.Map(document.getElementById("map"), myOptions);</script>
           </div>
         </div>
         <div class='card bordered margin-none'>

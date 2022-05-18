@@ -121,6 +121,11 @@ h2, h3, h4, h5, h6, .card {
   margin: var(--margin-med) auto;
   background: var(--light-color);
   width: 100%;
+  
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 table {
   table-layout: fixed;
@@ -208,7 +213,7 @@ table tr:nth-child(odd) {
   border: 1px solid var(--medium-color);
   border-radius: var(--border-radius);
   text-align:center;
-  background-color:var(--accent-color);
+  background-color:var(--light-color);
   
 }
 .bordered:hover {
