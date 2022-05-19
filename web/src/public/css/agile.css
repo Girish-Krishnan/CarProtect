@@ -217,9 +217,14 @@ table tr:nth-child(odd) {
   border: 1px solid var(--medium-color);
   border-radius: var(--border-radius);
   text-align:center;
-  background-color:var(--dark--color);
+  background-color:var(--dark-color);
   
 }
+
+label {
+  padding: 1rem;
+}
+
 .bordered:hover {
   border: 1px solid var(--medium-color);
   border-radius: var(--border-radius);
@@ -298,9 +303,7 @@ input, textarea {
 width: 100%;
 }
 
-.centered_login {
-  margin: 0 auto;
-}
+
 
 input:focus, textarea:focus {
   border-color: var(--dark--color);
