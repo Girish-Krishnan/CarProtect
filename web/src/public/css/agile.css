@@ -124,13 +124,21 @@ h5 {
 h6 {
   font-size: calc(1rem + 0.5vw);
 }
-h2, h3, h4, h5, h6, .card {
+h2, h3, h4, h5, h6 {
   padding: var(--padding-lg);
   margin: var(--margin-med) auto;
   background: var(--dark-color);
   width: 100%;
   
 }
+
+.card {
+  padding: var(--padding-lg);
+  margin: var(--margin-med) auto;
+  background: var(--soft-color);
+  width: 100%;
+}
+
 table {
   table-layout: fixed;
   border-collapse: collapse;
@@ -221,9 +229,6 @@ table tr:nth-child(odd) {
   
 }
 
-label {
-  padding: 1rem;
-}
 
 .bordered:hover {
   border: 1px solid var(--medium-color);
