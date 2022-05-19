@@ -70,7 +70,7 @@ query = "insert into Users (first_name, last_name, email, focus) values (%s, %s,
 values = [
   ('Girish','Krishnan','gikrishnan@ucsd.edu', 'Software Dev'),
   ('Anish','Sharma','ans019@ucsd.edu', 'Circuit Design'),
-  ('Hamza','Khan','hmk018@ucsd.edu', 'Customer Rep'),
+  ('Donovan','Sanders','dsanders@ucsd.edu', 'Customer Rep'),
   ('Ian','Tanuwidjaja','itanuwidjaja@ucsd.edu', 'Financial Exec')
 ]
 cursor.executemany(query, values)

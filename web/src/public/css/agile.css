@@ -67,7 +67,7 @@ button {
 
 button:hover {
   font-size: calc(1rem + 1vw);
-  background: var(--light-color);
+  background: #78d6dc;
   margin:auto;
   display: flex;
   justify-content: center;
@@ -145,7 +145,7 @@ table th, table td {
   text-align: left;
   padding: var(--padding-med);
   border: 1px solid var(--dark-color);
-  
+  word-wrap: break-word;
 }
 
 a {
@@ -293,6 +293,15 @@ input, textarea {
   border-radius: 2px;
   
 }
+
+.contact_comment {
+width: 100%;
+}
+
+.centered_login {
+  margin: 0 auto;
+}
+
 input:focus, textarea:focus {
   border-color: var(--dark--color);
   background: #78d6dc;
