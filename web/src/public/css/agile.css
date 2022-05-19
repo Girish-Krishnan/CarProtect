@@ -65,6 +65,14 @@ button {
   justify-content: center;
 }
 
+button:hover {
+  font-size: calc(1rem + 1vw);
+  background: var(--accent-color);
+  margin:auto;
+  display: flex;
+  justify-content: center;
+}
+
 p, ol li, ul li {
   font-size: calc(0.8rem + 1vw);
   text-align:center;
@@ -209,7 +217,7 @@ table tr:nth-child(odd) {
   border: 1px solid var(--medium-color);
   border-radius: var(--border-radius);
   text-align:center;
-  background-color:var(--light-color);
+  background-color:var(--dark--color);
   
 }
 .bordered:hover {
