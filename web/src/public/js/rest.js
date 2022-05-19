@@ -8,6 +8,10 @@ var longitude = document.getElementById("long")
 var gpsdisplay = document.getElementById("gpsdisplay")
 var stream  = setInterval(function() {}, 1000);
 
+var username_box = document.getElementById("username");
+var password_box = document.getElementById("password");
+
+
 function log_in() {
     var username = document.getElementById("username").value;
     var password = document.getElementById("password").value;
@@ -15,8 +19,11 @@ function log_in() {
         .then(response => response.json())
         .then(function(response) {
             if (response['username'] != "" && response['password'] != "") {
+                username_box.value = "";
+                password_box.value = "";
                 clearInterval(stream);
                 stream_data(response['username'], response['password']);
+
             }
             else {
                 alert("Invalid username or password");
