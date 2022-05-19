@@ -286,16 +286,16 @@ input, textarea {
   border: none;
   background-color: var(--light-color);
   padding: var(--padding-med);
-  width: 100%;
+  width: 50%;
   font-size: inherit;
   outline: none;
   border: 1px solid var(--medium-color);
   border-radius: 2px;
-  width: 100%;
+  
 }
 input:focus, textarea:focus {
   border-color: var(--dark--color);
-  background: #fff;
+  background: #78d6dc;
 }
 /* ------------ select ----- */
 .select {
