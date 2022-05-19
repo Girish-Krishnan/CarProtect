@@ -135,7 +135,7 @@ h2, h3, h4, h5, h6 {
 .card {
   padding: var(--padding-lg);
   margin: var(--margin-med) auto;
-  background: var(--soft-color);
+  background: var(--light-color);
   width: 100%;
 }
 
@@ -225,7 +225,7 @@ table tr:nth-child(odd) {
   border: 1px solid var(--medium-color);
   border-radius: var(--border-radius);
   text-align:center;
-  background-color:var(--soft-color);
+  background-color:var(--light-color);
   
 }
 
