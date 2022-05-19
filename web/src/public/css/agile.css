@@ -67,7 +67,7 @@ button {
 
 button:hover {
   font-size: calc(1rem + 1vw);
-  background: var(--accent-color);
+  background: var(--light-color);
   margin:auto;
   display: flex;
   justify-content: center;
@@ -127,7 +127,7 @@ h6 {
 h2, h3, h4, h5, h6, .card {
   padding: var(--padding-lg);
   margin: var(--margin-med) auto;
-  background: var(--light-color);
+  background: var(--dark-color);
   width: 100%;
   
 }
