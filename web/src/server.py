@@ -103,6 +103,8 @@ def store_mp3_view(request):
 
     input_file = request.POST['imageFile'].file
 
+    print(input_file)
+
     # Note that we are generating our own filename instead of trusting
     # the incoming filename since that might result in insecure paths.
     # Please note that in a real application you would not use /tmp,
