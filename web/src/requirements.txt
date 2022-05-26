@@ -5,6 +5,5 @@ python-dotenv
 bjoern   # to use the bjoern webserver
 waitress # to use the waitress webserver
 wand
-hashlib
 shutil
 hmac
