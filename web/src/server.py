@@ -10,6 +10,8 @@ import mysql.connector as mysql
 import os
 import uuid
 import shutil
+from PIL import Image
+import numpy as np
 
 from dotenv import load_dotenv
 load_dotenv('credentials.env')
@@ -102,8 +104,11 @@ def store_mp3_view(request):
     # stored somewhere.
 
     input_file = request.POST['imageFile'].file
-
+    print(request.POST['imageFile'])
     print(input_file)
+
+    image = Image.open(input_file)
+    img_array = np.array(image)
 
     # Note that we are generating our own filename instead of trusting
     # the incoming filename since that might result in insecure paths.
