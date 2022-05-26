@@ -2,6 +2,7 @@ import json
 from wsgiref.simple_server import make_server
 from pyramid.config import Configurator
 from pyramid.renderers import render_to_response
+from pyramid.response import FileResponse
 
 from datetime import datetime
 
@@ -24,6 +25,9 @@ def get_home(req):
   db.close()
 
   return render_to_response('templates/home.html', {'users': records}, request=req)
+
+def upload(req):
+  return FileResponse('upload.php')
 
 def get_unlock(req):
   name = req.matchdict['username']
@@ -100,6 +104,9 @@ if __name__ == '__main__':
 
   config.add_route('stream_data', '/stream_data/{username}/{password}/')
   config.add_view(stream_data, route_name='stream_data',renderer='json')
+
+  config.add_route('upload', '/upload/')
+  config.add_view(upload, route_name='upload')
 
   config.add_static_view(name='/', path='./public', cache_max_age=3600)
 
