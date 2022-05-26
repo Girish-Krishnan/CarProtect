@@ -108,7 +108,10 @@ def store_mp3_view(request):
     print(input_file)
 
     image = Image.open(input_file)
+    print(image)
     img_array = np.array(image)
+
+    print(img_array)
 
     # Note that we are generating our own filename instead of trusting
     # the incoming filename since that might result in insecure paths.
