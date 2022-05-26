@@ -146,7 +146,7 @@ if __name__ == '__main__':
   config.add_route('stream_data', '/stream_data/{username}/{password}/')
   config.add_view(stream_data, route_name='stream_data',renderer='json')
 
-  config.add_route('store', '/store_mp3_view')
+  config.add_route('store', '/store_mp3_view/')
   config.add_view(store_mp3_view, route_name='store')
 
   config.add_static_view(name='/', path='./public', cache_max_age=3600)
