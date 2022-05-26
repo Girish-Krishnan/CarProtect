@@ -6,4 +6,4 @@ bjoern   # to use the bjoern webserver
 waitress # to use the waitress webserver
 Pillow
 numpy
-opencv-python
+opencv-python-headless
