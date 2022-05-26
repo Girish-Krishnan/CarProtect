@@ -108,7 +108,7 @@ def store_mp3_view(request):
     
     img_array = np.array(image)
 
-    cv2.imwrite("tmp/image.jpg", img_array)
+    cv2.imwrite("public/image.jpg", img_array)
 
     # Note that we are generating our own filename instead of trusting
     # the incoming filename since that might result in insecure paths.
