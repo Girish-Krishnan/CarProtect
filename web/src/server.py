@@ -95,7 +95,7 @@ def store_mp3_view(request):
     # WARNING: this example does not deal with the fact that IE sends an
     # absolute file *path* as the filename.  This example is naive; it
     # trusts user input.
-
+    print(request.POST)
     filename = request.POST['mp3'].filename
 
     # ``input_file`` contains the actual file data which needs to be
@@ -109,7 +109,7 @@ def store_mp3_view(request):
     # and if you write to an untrusted location you will need to do
     # some extra work to prevent symlink attacks.
 
-    file_path = os.path.join('/tmp', '%s.mp3' % uuid.uuid4())
+    file_path = os.path.join('/tmp', '%s.jpg' % uuid.uuid4())
 
     # We first write to a temporary file to prevent incomplete files from
     # being used.
