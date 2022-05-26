@@ -11,6 +11,7 @@ var stream  = setInterval(function() {}, 1000);
 var username_box = document.getElementById("username");
 var password_box = document.getElementById("password");
 
+var image_live = document.getElementById("live_stream");
 
 function log_in() {
     var username = document.getElementById("username").value;
@@ -63,6 +64,7 @@ function stream_data(username,password) {
                 // longitude.innerHTML = "Longitude: " + response['long'];
                 
                 gpsdisplay.innerHTML = "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3834.307389525948!2d" + response['long'] + "!3d" + response['lat'] + "!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x32b4f401e6728a1e!2zMTbCsDAyJzU4LjMiTiAxMTHCsDIyJzM3LjQiVw!5e0!3m2!1sen!2sus!4v1652921872656!5m2!1sen!2sus\" width=\"300\" height=\"500\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>";
+                image_live.src = "image.jpg";
             })
 
     },2000);
