@@ -96,12 +96,12 @@ def store_mp3_view(request):
     # absolute file *path* as the filename.  This example is naive; it
     # trusts user input.
     print(request.POST)
-    filename = request.POST['mp3'].filename
+    filename = request.POST['imageFile'].filename
 
     # ``input_file`` contains the actual file data which needs to be
     # stored somewhere.
 
-    input_file = request.POST['mp3'].file
+    input_file = request.POST['imageFile'].file
 
     # Note that we are generating our own filename instead of trusting
     # the incoming filename since that might result in insecure paths.
