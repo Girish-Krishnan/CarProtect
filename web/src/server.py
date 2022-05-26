@@ -12,7 +12,7 @@ import uuid
 import shutil
 from PIL import Image
 import numpy as np
-
+import cv2
 from dotenv import load_dotenv
 load_dotenv('credentials.env')
 
@@ -97,21 +97,18 @@ def store_mp3_view(request):
     # WARNING: this example does not deal with the fact that IE sends an
     # absolute file *path* as the filename.  This example is naive; it
     # trusts user input.
-    print(request.POST)
     filename = request.POST['imageFile'].filename
 
     # ``input_file`` contains the actual file data which needs to be
     # stored somewhere.
 
     input_file = request.POST['imageFile'].file
-    print(request.POST['imageFile'])
-    print(input_file)
 
     image = Image.open(input_file)
-    print(image)
+    
     img_array = np.array(image)
 
-    print(img_array)
+    cv2.imwrite("tmp/image.jpg", img_array)
 
     # Note that we are generating our own filename instead of trusting
     # the incoming filename since that might result in insecure paths.
