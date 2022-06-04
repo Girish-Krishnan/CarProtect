@@ -38,6 +38,7 @@ function stream_data(username,password) {
         fetch('/stream_data/' + username + '/' + password + '/')
             .then(response => response.json())
             .then(function(response) {
+                console.log(response);
                 if(response['pir'] == "1") {
                     pir_1.innerHTML = "<img src=\'person_1.png\'>";
                     pir_2.innerHTML = "<img src=\'warning.png\'>";
@@ -69,5 +70,5 @@ function stream_data(username,password) {
                 image_live.innerHTML = "";
             })
 
-    },2000);
+    },500);
 }
