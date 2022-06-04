@@ -82,7 +82,7 @@ function stream_data(username,password) {
 
                 }
                 //This will render map on load
-                google.maps.event.addEventListener(window, 'load', initialize);
+                window.addEventListener('load', initialize);
                 
                 image_live.src = image_live.src.split("?")[0] + "?" + new Date().getTime();
                 image_live.innerHTML = "";
