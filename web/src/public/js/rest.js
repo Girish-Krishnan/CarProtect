@@ -39,7 +39,7 @@ function stream_data(username,password) {
             .then(response => response.json())
             .then(function(response) {
                 console.log(response);
-                if(response['pir'] == "1") {
+                if(response['pir'] == 1) {
                     pir_1.innerHTML = "<img src=\'person_1.png\'>";
                     pir_2.innerHTML = "<img src=\'warning.png\'>";
                 }
@@ -48,7 +48,7 @@ function stream_data(username,password) {
                     pir_2.innerHTML = "<img src=\'good.png\'>";
                 }
 
-                if(response['vibration'] == "4" | response['vibration'] == "5" | response['vibration'] == "6") {
+                if(response['vibration'] >= 4) {
                     vibration_1.innerHTML = "<img src=\'vib_1.gif\'>";
                     vibration_2.innerHTML = "<img src=\'warning.png\'>";
                 }
@@ -82,7 +82,7 @@ function stream_data(username,password) {
 
                 }
                 //This will render map on load
-                google.maps.event.addDomListener(window, 'load', initialize);
+                google.maps.event.addEventListener(window, 'load', initialize);
                 
                 image_live.src = image_live.src.split("?")[0] + "?" + new Date().getTime();
                 image_live.innerHTML = "";
