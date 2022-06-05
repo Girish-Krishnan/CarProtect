@@ -58,24 +58,24 @@ function stream_data(username,password) {
             .then(function(response) {
                 console.log(response);
                 if(response['pir'] == 1) {
-                    pir_1.innerHTML = "<img src=\'person_1.png\'>";
+                    pir_1.innerHTML = "<img src=\'" + "person_1.png".split("?")[0] + "?" + new Date().getTime()  +"\'>";
                     pir_2.innerHTML = "<img src=\'warning.png\'>";
                     console.log("PIR 1");
                 }
                 else {
-                    pir_1.innerHTML = "<img src=\'person_0.png\'>";
+                    pir_1.innerHTML = "<img src=\'" + "person_0.png".split("?")[0] + "?" + new Date().getTime() + "\'>";
                     pir_2.innerHTML = "<img src=\'good.png\'>";
                 }
 
                 if(response['vibration'] >= 4) {
-                    vibration_1.innerHTML = "<img src=\'vib_1.gif\'>";
-                    vibration_2.innerHTML = "<img src=\'warning.png\'>";
+                    vibration_1.innerHTML = "<img src=\'"+"vib_1.gif".split("?")[0] + "?" + new Date().getTime()+"\'>";
+                    vibration_2.innerHTML = "<img src=\'"+"warning.png".split("?")[0] + "?" + new Date().getTime()+"\'>";
                     console.log("vibra")
                 }
 
                 else {
-                    vibration_1.innerHTML = "<img src=\'vib_0.gif\'>";
-                    vibration_2.innerHTML = "<img src=\'good.png\'>";
+                    vibration_1.innerHTML = "<img src=\'"+"vib_0.gif".split("?")[0] + "?" + new Date().getTime() + "\'>";
+                    vibration_2.innerHTML = "<img src=\'" + "good.png".split("?")[0] + "?" + new Date().getTime() + "\'>";
                 }
 
               //  vibration.innerHTML = "Vibrations: " + response['vib'];
