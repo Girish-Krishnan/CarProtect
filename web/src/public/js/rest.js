@@ -13,8 +13,8 @@ var password_box = document.getElementById("password");
 
 var image_live = document.getElementById("live_stream");
 
-var map_lat = 0;
-var map_long = 0;
+var map_lat = 32.8755662;
+var map_long = -117.2323252;
 
 function initMap() {
     // The location of Uluru
@@ -58,24 +58,23 @@ function stream_data(username,password) {
             .then(function(response) {
                 console.log(response);
                 if(response['pir'] == 1) {
-                    pir_1.innerHTML = "<img src=\'" + "person_1.png".split("?")[0] + "?" + new Date().getTime()  +"\'>";
-                    pir_2.innerHTML = "<img src=\'warning.png\'>";
-                    console.log("PIR 1");
+                    pir_1.src = "person_1.png".split("?")[0] + "?" + new Date().getTime();
+                    pir_2.src = "warning.png".split("?")[0] + "?" + new Date().getTime();
+                    //console.log("PIR 1");
                 }
                 else {
-                    pir_1.innerHTML = "<img src=\'" + "person_0.png".split("?")[0] + "?" + new Date().getTime() + "\'>";
-                    pir_2.innerHTML = "<img src=\'good.png\'>";
+                    pir_1.src = "person_0.png".split("?")[0] + "?" + new Date().getTime();
+                    pir_2.src = "good.png".split("?")[0] + "?" + new Date().getTime();
                 }
 
-                if(response['vibration'] >= 4) {
-                    vibration_1.innerHTML = "<img src=\'"+"vib_1.gif".split("?")[0] + "?" + new Date().getTime()+"\'>";
-                    vibration_2.innerHTML = "<img src=\'"+"warning.png".split("?")[0] + "?" + new Date().getTime()+"\'>";
-                    console.log("vibra")
+                if(response['vibration'] >= 2) {
+                    vibration_1.src = "vib_1.png".split("?")[0] + "?" + new Date().getTime();
+                    vibration_2.src = "warning.png".split("?")[0] + "?" + new Date().getTime();
                 }
 
                 else {
-                    vibration_1.innerHTML = "<img src=\'"+"vib_0.gif".split("?")[0] + "?" + new Date().getTime() + "\'>";
-                    vibration_2.innerHTML = "<img src=\'" + "good.png".split("?")[0] + "?" + new Date().getTime() + "\'>";
+                    vibration_1.src = "vib_0.png".split("?")[0] + "?" + new Date().getTime();
+                    vibration_2.src = "good.png".split("?")[0] + "?" + new Date().getTime();
                 }
 
               //  vibration.innerHTML = "Vibrations: " + response['vib'];
