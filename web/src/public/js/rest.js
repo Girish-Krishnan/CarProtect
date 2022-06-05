@@ -13,9 +13,12 @@ var password_box = document.getElementById("password");
 
 var image_live = document.getElementById("live_stream");
 
+var map_lat = 0;
+var map_long = 0;
+
 function initMap() {
     // The location of Uluru
-    const uluru = { lat: -25.344, lng: 131.031 };
+    const uluru = { lat: map_lat, lng: map_long };
     // The map, centered at Uluru
     const map = new google.maps.Map(document.getElementById("gpsdisplay"), {
       zoom: 4,
@@ -57,6 +60,7 @@ function stream_data(username,password) {
                 if(response['pir'] == 1) {
                     pir_1.innerHTML = "<img src=\'person_1.png\'>";
                     pir_2.innerHTML = "<img src=\'warning.png\'>";
+                    console.log("PIR 1");
                 }
                 else {
                     pir_1.innerHTML = "<img src=\'person_0.png\'>";
@@ -66,6 +70,7 @@ function stream_data(username,password) {
                 if(response['vibration'] >= 4) {
                     vibration_1.innerHTML = "<img src=\'vib_1.gif\'>";
                     vibration_2.innerHTML = "<img src=\'warning.png\'>";
+                    console.log("vibra")
                 }
 
                 else {
@@ -107,6 +112,8 @@ function stream_data(username,password) {
                 // Initialize and add the map
   
   window.initMap = initMap;
+  map_lat = response['lat'];
+    map_long = response['long'];
   
             })
 
