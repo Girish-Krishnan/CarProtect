@@ -56,7 +56,7 @@ function stream_data(username,password) {
         fetch('/stream_data/' + username + '/' + password + '/')
             .then(response => response.json())
             .then(function(response) {
- //               console.log(response);
+                console.log(response);
                 if(response['pir'] == 1) {
                     pir_1.src = "person_1.png".split("?")[0] + "?" + new Date().getTime();
                     pir_2.src = "warning.png".split("?")[0] + "?" + new Date().getTime();
