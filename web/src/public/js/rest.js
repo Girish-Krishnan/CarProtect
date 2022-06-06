@@ -67,7 +67,7 @@ function stream_data(username,password) {
                     pir_2.src = "good.png".split("?")[0] + "?" + new Date().getTime();
                 }
 
-                if(response['vibration'] == 2  || response['vibration'] == 3 || response['vibration'] == 4 || response['vibration'] == 5 ) {
+                if(response['vibration'] == 2  | response['vibration'] == 3 | response['vibration'] == 4 | response['vibration'] == 5 | response['vibration'] == 6 ) {
                     vibration_1.src = "vib_1.gif".split("?")[0] + "?" + new Date().getTime();
                     vibration_2.src = "warning.png".split("?")[0] + "?" + new Date().getTime();
                 }
