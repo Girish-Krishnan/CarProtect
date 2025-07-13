@@ -8,18 +8,20 @@
   The above copyright notice and this permission notice shall be included in all
   copies or substantial portions of the Software.
 */
+// Firmware for the ESP32-CAM. Captures a JPEG every second and uploads it
+// to the web server defined in `serverName`.
 
 #include <Arduino.h>
-#include <WiFi.h> 
+#include <WiFi.h>
 #include "soc/soc.h"
 #include "soc/rtc_cntl_reg.h"
 #include "esp_camera.h"
+#include "config.h"  // defines WIFI_SSID, WIFI_PASSWORD and SERVER_HOST
 
-const char* ssid = "io";
-const char* password = "girishkrishnan";
+const char* ssid = WIFI_SSID;
+const char* password = WIFI_PASSWORD;
 
-String serverName = "164.92.89.132";   // REPLACE WITH YOUR Raspberry Pi IP ADDRESS
-//String serverName = "example.com";   // OR REPLACE WITH YOUR DOMAIN NAME
+String serverName = SERVER_HOST;   // Web server address
 
 String serverPath = "/store_mp3_view/";     // The default serverPath should be upload.php
 

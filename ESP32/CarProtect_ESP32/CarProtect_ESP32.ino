@@ -1,6 +1,12 @@
 #include <WiFi.h>
 #include <HTTPClient.h>
 #include <SoftwareSerial.h>
+#include "config.h"  // defines WIFI_SSID, WIFI_PASSWORD and SERVER_HOST
+// Simple firmware that collects sensor data from the PIR sensor, vibration
+// detector and accelerometer. Readings are periodically sent to the web
+// server defined in `serverName`. The board also controls a buzzer that
+// sounds when strong vibrations are detected.
+
 //#include <TinyGPS.h>
 //SoftwareSerial gpsSerial(32,35);//rx,tx
 //TinyGPS gps; // create gps object
@@ -22,14 +28,14 @@ unsigned long timeStart = 0;
 int pir = 0;
 int vib = 0;
 
-const char* ssid = "io";
-const char* password = "girishkrishnan";
+const char* ssid = WIFI_SSID;
+const char* password = WIFI_PASSWORD;
 
 String esp32_username = "myesp32_1234";
 String esp32_password = "thisisanesp32";
 
 //Your Domain name with URL path or IP address with path
-String serverName = "http://164.92.89.132/unlock/" + esp32_username + "/" + esp32_password + "/";
+String serverName = String("http://") + SERVER_HOST + "/unlock/" + esp32_username + "/" + esp32_password + "/";
 
 
 // the following variables are unsigned longs because the time, measured in
@@ -80,7 +86,7 @@ void loop() {
   Serial.println("!!! Sum:  " + String(sum));
   readAccelSensor();
   Serial.println(String(ax));
-  String serverName2 =  "http://164.92.89.132/send_data/" + esp32_username + "/" + esp32_password + "/" + String(pir) + "/" + String(sum) + "/" + String(ax) +  "/" + String(ay) +  "/" + String(az) + "/" + latitude + "/" + longitude + "/";
+  String serverName2 =  String("http://") + SERVER_HOST + "/send_data/" + esp32_username + "/" + esp32_password + "/" + String(pir) + "/" + String(sum) + "/" + String(ax) +  "/" + String(ay) +  "/" + String(az) + "/" + latitude + "/" + longitude + "/";
   Serial.println(serverName2);
   delay(50);
   if(sum > 3) {
