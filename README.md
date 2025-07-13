@@ -3,14 +3,25 @@
 CarProtect is a proof-of-concept IoT security system built during ECE140B.
 It combines two ESP32 based microcontrollers with a small web application
 that stores sensor data and displays live images.
+The project consists of a Python web server backed by MySQL and two ESP32-based boards. One board hosts a camera module that uploads images while the other collects sensor data such as motion and vibration.
+
+
+## System overview
+
+```mermaid
+graph LR
+    cam[ESP32CamUploader] -->|Image upload| WebServer
+    main[ESP32MainBoard] -->|Sensor data| WebServer
+    WebServer -->|Stores| MySQL
+```
+
 
 ## Repository layout
 
 ```
 ESP32/              Firmware for the ESP32 boards
-  CamUpload/        Sketch for the ESP32-CAM module
-  CameraWebServerGirish/ Example camera project (reference)
-  CarProtect_ESP32/ Sketch for the main ESP32 board
+  ESP32CamUploader/        Sketch for the ESP32-CAM module
+  ESP32MainBoard/ Sketch for the main ESP32 board
 
 web/                Python web application and Docker config
   src/app/          Application package (routes, DB helpers)
@@ -46,8 +57,8 @@ python -m app.server
 
 ## Firmware
 
-The `ESP32/CamUpload` sketch uploads images from the ESP32-CAM to the
-server. `ESP32/CarProtect_ESP32` reads sensor data (PIR, vibration and
+The `ESP32/ESP32CamUploader` sketch uploads images from the ESP32-CAM to the
+server. `ESP32/ESP32MainBoard` reads sensor data (PIR, vibration and
 accelerometer) and periodically sends it to the server.
 Flash each sketch to the appropriate board using the Arduino IDE or
 `arduino-cli`.
