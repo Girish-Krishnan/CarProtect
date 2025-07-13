@@ -12,7 +12,7 @@ WORKDIR /app
 
 EXPOSE 6000
 
-CMD python server.py
+CMD ["python", "-m", "app.server"]
 # Uncomment if you wish to use bjoern or waitress web servers instead of the default
 # CMD python server_bjoern.py
 # CMD python server_waitress.py

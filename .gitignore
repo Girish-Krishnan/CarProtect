@@ -1,2 +1,4 @@
 *.env
 db/
+ESP32/*/config.h
+
